@@ -1,6 +1,8 @@
-MIT License
+MIT License / Licença MIT
 
-Copyright (c) 2026 TWalking
+=== ENGLISH VERSION ===
+
+Copyright (c) 2025-2026 CyberURL Analyst
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +21,119 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+=== VERSÃO EM PORTUGUÊS BRASILEIRO ===
+
+Copyright (c) 2025-2026 CyberURL Analyst
+
+É concedida permissão, gratuitamente, a qualquer pessoa que obtenha uma cópia
+deste software e arquivos de documentação associados (o "Software"), para
+lidar com o Software sem restrição, incluindo, sem limitação, os direitos
+de usar, copiar, modificar, mesclar, publicar, distribuir, sublicenciar e/ou
+vender cópias do Software, e permitir que as pessoas a quem o Software é
+fornecido o façam, sujeito às seguintes condições:
+
+O aviso de copyright acima e este aviso de permissão devem ser incluídos em
+todas as cópias ou partes substanciais do Software.
+
+O SOFTWARE É FORNECIDO "COMO ESTÁ", SEM GARANTIA DE QUALQUER TIPO, EXPRESSA
+OU IMPLÍCITA, INCLUINDO, MAS NÃO SE LIMITANDO ÀS GARANTIAS DE COMERCIALIZAÇÃO,
+ADEQUAÇÃO A UM PROPÓSITO ESPECÍFICO E NÃO VIOLAÇÃO. EM NENHUM CASO OS AUTORES
+OU DETENTORES DOS DIREITOS AUTORAIS SERÃO RESPONSÁVEIS POR QUALQUER REIVINDICAÇÃO,
+DANOS OU OUTRAS RESPONSABILIDADES, SEJA EM AÇÃO DE CONTRATO, DELITO OU DE OUTRA
+FORMA, DECORRENTES DE, FORA DE OU EM CONEXÃO COM O SOFTWARE OU O USO OU OUTRAS
+NEGOCIAÇÕES NO SOFTWARE.
+
+---
+
+THIRD-PARTY LICENSES / LICENÇAS DE TERCEIROS
+
+This project incorporates several third-party libraries and components,
+each with their own licensing terms:
+
+Este projeto incorpora várias bibliotecas e componentes de terceiros,
+cada um com seus próprios termos de licenciamento:
+
+1. Streamlit
+   License / Licença: Apache License 2.0
+   Copyright (c) 2019-2026 Snowflake Inc.
+   Repository: https://github.com/streamlit/streamlit
+
+2. scikit-learn
+   License / Licença: BSD 3-Clause License
+   Copyright (c) 2007-2026 scikit-learn developers
+   Repository: https://github.com/scikit-learn/scikit-learn
+
+3. requests
+   License / Licença: Apache License 2.0
+   Copyright (c) 2011-2026 Kenneth Reitz
+   Repository: https://github.com/psf/requests
+
+4. tldextract
+   License / Licença: BSD 3-Clause License
+   Copyright (c) 2013 John Googasian
+   Repository: https://github.com/john-googasian/tldextract
+
+5. python-whois
+   License / Licença: MIT License
+   Copyright (c) 2014 DDarko
+   Repository: https://github.com/richardpenman/whois
+
+6. validators
+   License / Licença: MIT License
+   Copyright (c) 2013-2026 Konsta Vesterinen
+   Repository: https://github.com/python-validators/validators
+
+7. Jinja2
+   License / Licença: BSD 3-Clause License
+   Copyright (c) 2007-2026 Pallets Projects
+   Repository: https://github.com/pallets/jinja
+
+8. Pillow
+   License / Licença: HPND License
+   Copyright (c) 1995-2026 Fredrik Lundh and contributors
+   Repository: https://github.com/python-pillow/Pillow
+
+9. plotly
+   License / Licença: MIT License
+   Copyright (c) 2016-2026 Plotly, Inc.
+   Repository: https://github.com/plotly/plotly.py
+
+10. python-dotenv
+    License / Licença: BSD 3-Clause License
+    Copyright (c) 2014 Saurabh Kumar
+    Repository: https://github.com/theskumar/python-dotenv
+
+11. joblib
+    License / Licença: BSD 3-Clause License
+    Copyright (c) 2008-2026 joblib developers
+    Repository: https://github.com/joblib/joblib
+
+12. keyring
+    License / Licença: MIT License
+    Copyright (c) 2010-2026 Jason R. Coombs
+    Repository: https://github.com/jaraco/keyring
+
+DISCLAIMER / AVISO:
+The above list may not be exhaustive. Users are encouraged to review
+the complete dependency tree and associated licenses before using this
+software in commercial or production environments.
+
+A lista acima pode não ser exaustiva. Recomenda-se revisar a árvore
+completa de dependências e licenças associadas antes de usar este
+software em ambientes comerciais ou de produção.
+
+DATASETS / CONJUNTOS DE DADOS:
+This project uses publicly available security datasets for educational
+purposes. Each dataset has its own license terms. See README.md for details.
+
+Este projeto utiliza conjuntos de dados de segurança publicamente disponíveis
+para fins educacionais. Cada dataset possui seus próprios termos de licença.
+Consulte o README.md para detalhes.
+
+EDUCATIONAL USE NOTICE / AVISO DE USO EDUCACIONAL:
+This software is intended exclusively for educational and research purposes.
+Use for offensive purposes is illegal and unethical.
+
+Este software destina-se exclusivamente a fins educacionais e de pesquisa.
+O uso para fins ofensivos é ilegal e antiético.
