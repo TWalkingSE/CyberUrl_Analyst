@@ -8,7 +8,8 @@
 
 Desenvolvida em Python com Streamlit, o CyberURL Analyst detecta, analisa e **ensina** usuários a identificar ameaças em URLs e domínios. O objetivo não é apenas mostrar *o quê* é perigoso, mas explicar *por quê* — formando pessoas que sabem se proteger sozinhas.
 
-<img width="2012" height="1231" alt="Screenshot 2026-04-03 104509" src="https://github.com/user-attachments/assets/b34b30cd-0ece-43a0-8bd1-0282a7ffcb2d" />
+<img width="2522" height="967" alt="image" src="https://github.com/user-attachments/assets/b7f76419-6176-4322-b302-abcf5b70bf53" />
+
 
 
 > ⚠️ Esta ferramenta é **exclusivamente educacional**. Não substitui soluções profissionais de segurança (antivírus, firewalls, SOC).
