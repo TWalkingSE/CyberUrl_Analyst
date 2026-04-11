@@ -20,6 +20,7 @@ build/
 
 # ── Logs ──
 *.log
+logs/
 
 # ── Datasets (manter apenas amostras) ──
 datasets/downloads/
@@ -27,13 +28,12 @@ datasets/downloads/
 
 # ── Modelo ML treinado (gerado localmente) ──
 models/trained_model.joblib
+models/*.joblib
+models/feature_names.txt
 
 # ── Dados persistentes locais ──
-data/analysis_history.json
-data/session_stats.json
-data/quiz_leaderboard.json
-data/user_feedback.json
-# Manter data/scenarios.json (dados da aplicação)
+data/*.json
+!data/scenarios.json
 
 # ── IDEs ──
 .idea/
@@ -41,6 +41,8 @@ data/user_feedback.json
 
 # ── Cache e temporários ──
 .pytest_cache/
+.coverage
+htmlcov/
 *.bak
 *.tmp
 *.swp
