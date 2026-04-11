@@ -1,0 +1,18 @@
+[run]
+branch = True
+source =
+    app
+    config
+    models
+    utils
+    views
+omit =
+    tests/*
+    build.py
+
+[report]
+skip_empty = True
+show_missing = True
+omit =
+    tests/*
+    build.py
