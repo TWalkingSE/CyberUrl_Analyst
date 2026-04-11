@@ -1,12 +1,19 @@
-streamlit>=1.32.0
-plotly>=5.18.0
+# Interface desktop
+PyQt6>=6.8.0
+
+# Rede, parsing e integrações locais
 requests>=2.31.0
 python-dotenv>=1.0.0
 tldextract>=5.1.0
 validators>=0.22.0
 python-whois>=0.9.4
 keyring>=25.0.0
+
+# Machine Learning (o app funciona sem modelo treinado, mas estas libs
+# habilitam treino e predição local quando disponíveis)
 scikit-learn>=1.4.0
 joblib>=1.3.0
+
+# Relatórios e assets
 Pillow>=10.0.0
 Jinja2>=3.1.0
