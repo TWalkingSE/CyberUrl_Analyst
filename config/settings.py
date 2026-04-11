@@ -319,10 +319,14 @@ SUSPICIOUS_PORTS = [
 
 # === WHOIS ===
 DOMAIN_YOUNG_DAYS = 30  # Domínios com menos de X dias são suspeitos
+WHOIS_TIMEOUT_SECONDS = 10
 
 # === Análise cache ===
 ANALYSIS_CACHE_MAX_SIZE = 500
 
+# === Datasets ===
+DATASET_MAX_ENTRIES = 2_000_000
+
 # === UI ===
 APP_NAME = "CyberURL Analyst"
-APP_VERSION = "2.1.0"
+APP_VERSION = "3.0.0"
