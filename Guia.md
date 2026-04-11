@@ -1,72 +1,70 @@
-# 🛡️ Guia do Usuário — CyberURL Analyst
+# 🛡️ Guia do Usuário — CyberURL Analyst Desktop
 
-Este guia explica como usar o CyberURL Analyst de forma simples, mesmo que você não tenha experiência com programação ou segurança digital.
+Este guia foi escrito para quem quer usar a ferramenta sem precisar entender programação.
 
----
+O CyberURL Analyst analisa links e explica, em linguagem simples, por que uma URL parece segura, suspeita ou maliciosa.
 
-## O que é o CyberURL Analyst?
-
-É uma ferramenta que analisa links (URLs) e te ajuda a identificar se são **seguros**, **suspeitos** ou **maliciosos** (perigosos). Além de mostrar o resultado, ela **explica o motivo** de cada classificação — para que você aprenda a se proteger sozinho.
-
-> **Importante:** Esta ferramenta é educacional. Ela não substitui antivírus ou outras soluções de segurança profissionais.
+> Importante: a ferramenta é educacional. Ela ajuda a aprender e revisar sinais de risco, mas não substitui antivírus ou soluções profissionais de segurança.
 
 ---
 
 ## Como abrir a ferramenta
 
-### Pré-requisitos
+Você tem duas formas de usar:
 
-Você precisa ter instalado:
-- **Python 3.10 ou superior** — [Baixe aqui](https://www.python.org/downloads/)
-- As dependências do projeto (veja abaixo)
+### Opção 1. Executável
 
-### Passo a passo
+Se alguém já gerou o executável para você, basta abrir o arquivo `.exe` dentro da pasta `dist/CyberURL_Analyst/`.
 
-1. Abra o **terminal** (Prompt de Comando ou PowerShell no Windows)
-2. Navegue até a pasta do projeto:
-   ```
+### Opção 2. Rodar pelo Python
+
+1. Abra o terminal.
+2. Entre na pasta do projeto:
+
+   ```txt
    cd caminho/para/CyberUrl_Analyst
    ```
+
 3. Ative o ambiente virtual:
-   ```
-   # Windows (PowerShell)
+
+   ```txt
    venv\Scripts\Activate.ps1
-
-   # Windows (CMD)
-   venv\Scripts\activate.bat
-
-   # Linux/macOS
-   source venv/bin/activate
    ```
-4. Instale as dependências (só precisa fazer uma vez):
-   ```
+
+4. Instale as dependências, se ainda não fez isso:
+
+   ```txt
    pip install -r requirements.txt
    ```
-5. Inicie a aplicação:
+
+5. Abra a aplicação:
+
+   ```txt
+   python app.py
    ```
-   streamlit run app.py
-   ```
-6. O navegador abrirá automaticamente em `http://localhost:8501`
+
+Uma janela desktop será aberta.
 
 ---
 
 ## Navegação
 
-A interface tem uma **barra lateral esquerda** (sidebar) com 9 módulos. Clique em qualquer um para navegar:
+A janela tem um menu lateral com 10 páginas:
 
 | Ícone | Módulo | Para que serve |
 |-------|--------|---------------|
-| 🏠 | **Dashboard** | Página inicial com estatísticas e histórico |
-| 🔍 | **Anatomia da URL** | Mostra cada parte de um link com cores |
-| 🛡️ | **Motor de Análise** | Analisa se um link é seguro ou perigoso |
-| 📊 | **Relatório** | Relatório detalhado da última análise |
-| ❓ | **Quiz** | Teste seus conhecimentos sobre links |
-| 🎭 | **Cenários** | Simula situações reais de golpes |
-| 🔌 | **APIs Externas** | Consulta serviços como VirusTotal |
-| 📦 | **Datasets** | Gerencia bancos de dados de ameaças |
-| ⚙️ | **Configurações** | Ajustes avançados |
+| 🏠 | Dashboard | Estatísticas, histórico e progresso |
+| 🔍 | Anatomia | Mostra cada parte da URL |
+| 🛡️ | Análise | Analisa um link ou uma lista de links |
+| 📊 | Relatório | Exibe e exporta o último relatório |
+| ❓ | Quiz | Treino gamificado |
+| 🎭 | Cenários | Simulações realistas de golpes |
+| 🔌 | APIs | Consulta serviços externos |
+| 📦 | Datasets | Gerencia bases públicas de ameaças |
+| 📖 | Glossário | Explica termos e conceitos |
+| ⚙️ | Configurações | Ajustes avançados e status do modelo ML |
 
-No final da sidebar, você pode trocar o **idioma** (Português, English, Español).
+Na parte inferior do menu lateral existe um seletor de idioma.
 
 ---
 
@@ -74,199 +72,203 @@ No final da sidebar, você pode trocar o **idioma** (Português, English, Españ
 
 ### 🏠 Dashboard
 
-A página inicial mostra:
-- **Quantas análises** você já fez
-- **Distribuição** das classificações (seguro/suspeito/malicioso) em gráfico
-- **Histórico** das últimas análises com paginação
-- **Busca e filtro** — pesquise URLs no histórico e filtre por classificação (Segura/Suspeita/Maliciosa)
+Mostra:
 
-Não precisa fazer nada aqui — os dados são preenchidos automaticamente conforme você usa a ferramenta.
+- quantas análises já foram feitas
+- quantos resultados saíram como seguro, suspeito ou malicioso
+- histórico salvo no disco
+- progresso no quiz e nos cenários
+- conquistas liberadas
 
 ---
 
 ### 🔍 Anatomia da URL
 
-Aqui você aprende como um link é composto. Cole qualquer URL e clique em **Analisar Anatomia**.
+Cole um link e clique em `Analisar anatomia`.
 
-A ferramenta vai separar o link em partes coloridas:
-- 🟢 **Protocolo** (https://) — a forma de conexão
-- 🔵 **Subdomínio** (www.) — parte antes do domínio principal
-- 🟡 **Domínio** (google) — o nome do site
-- 🟠 **TLD** (.com) — a extensão do domínio
-- 🟣 **Porta** (:8080) — canal de comunicação (raro em sites normais)
-- 🔴 **Path** (/pagina) — o caminho dentro do site
-- 🔴 **Query** (?q=teste) — parâmetros enviados ao site
+Você verá:
 
-**Dica:** Se você recebeu um link estranho, cole aqui primeiro para entender o que cada parte significa antes de clicar.
+- o link como se estivesse na barra do navegador
+- a decomposição por partes e cores
+- protocolo, subdomínio, domínio, TLD, porta, path, query e fragmento
+- uma comparação visual entre um domínio legítimo e um suspeito
+
+Isso é útil para treinar o olho antes de clicar em links duvidosos.
 
 ---
 
-### 🛡️ Motor de Análise
+### 🛡️ Análise
 
-Este é o módulo principal. Aqui você analisa links para saber se são perigosos.
+É o módulo principal.
 
-**Como usar:**
-1. Cole o link no campo "URL"
-2. Clique em **Analisar URL**
-3. Aguarde o resultado
+Você pode:
 
-**O resultado mostra:**
-- **Score de 0 a 100** — quanto maior, mais perigoso
-  - 🟢 0–25 = **Seguro**
-  - 🟡 26–65 = **Suspeito**
-  - 🔴 66–100 = **Malicioso**
-- **URL defanged** — o link em formato seguro (não clicável)
-- **Lista de fatores** — cada problema encontrado com explicação
-- **Recomendações** — o que fazer baseado no resultado
+- analisar uma URL única
+- analisar várias URLs de uma vez
+- ver o relatório na própria tela
+- registrar feedback se a análise foi útil ou não
 
-**Análise em lote:** Na aba "Batch", cole vários links (um por linha) para analisar todos de uma vez.
+O resultado mostra:
 
-Após a análise, você pode dar **feedback** (👍 ou 👎) para nos ajudar a melhorar.
+- score de risco
+- classificação final
+- fatores encontrados
+- recomendações do que fazer
 
 ---
 
-### 📊 Relatório Didático
+### 📊 Relatório
 
-Mostra o relatório completo da **última análise** feita no Motor de Análise. Você pode:
-- **Baixar em TXT** — texto simples para compartilhar
-- **Baixar em HTML** — formato visual para abrir no navegador
+Mostra o último resultado gerado na página de análise.
 
----
+Você pode exportar em:
 
-### ❓ Quiz Interativo
-
-Teste seus conhecimentos sobre links seguros e maliciosos!
-
-**Como funciona:**
-1. Escolha o nível: **Iniciante**, **Intermediário** ou **Avançado**
-2. Clique em **Iniciar Quiz**
-3. Para cada URL mostrada, classifique como **Segura** ou **Maliciosa**
-4. Receba feedback imediato com explicação
-5. Ao final de 10 questões, veja seu resultado
-
-**Leaderboard:** Após terminar, salve seu nome para aparecer no ranking!
-
-Você pode **exportar** seu resultado em CSV para guardar.
+- TXT
+- HTML
 
 ---
 
-### 🎭 Simulador de Cenários
+### ❓ Quiz
 
-Simula situações reais de golpes (phishing) que você pode encontrar no dia a dia:
-- E-mails falsos de bancos
-- Mensagens de WhatsApp com links
-- SMS de promoções falsas
-- Notificações falsas do governo
-- E até exemplos legítimos (para treinar sua percepção)
+Treinamento com 10 perguntas por rodada.
 
-**Como funciona:**
-1. Escolha uma **categoria** (ou "Todos")
-2. Opcionalmente, ative o **modo Apresentação** (fontes maiores, ideal para projetar)
-3. Clique em **Iniciar Simulação**
-4. Leia a mensagem simulada e decida: **"Eu clicaria neste link?"**
-5. Veja a análise com todos os sinais de alerta
+Você escolhe a dificuldade ou usa o modo automático.
+
+Ao final, a ferramenta mostra:
+
+- acertos
+- precisão
+- melhor sequência
+- opção de salvar no leaderboard
+- opção de exportar o resultado
+
+---
+
+### 🎭 Cenários
+
+Simula golpes parecidos com os do mundo real:
+
+- e-mails falsos
+- mensagens de SMS
+- abordagens em apps de conversa
+- situações bancárias ou corporativas
+
+Você decide se clicaria ou não. Depois a ferramenta explica todos os sinais de alerta.
 
 ---
 
 ### 🔌 APIs Externas
 
-Consulta serviços de segurança online para obter uma segunda opinião sobre um link.
+Usa serviços online para obter uma segunda opinião sobre o link.
 
-**Serviços disponíveis:**
-- **VirusTotal** — verifica contra 70+ antivírus
-- **URLScan.io** — faz um scan visual do site
-- **Google Safe Browsing** — verifica se é seguro
+Serviços suportados:
 
-> **Atenção:** Este módulo envia o link para servidores externos. Você precisa concordar antes de prosseguir.
+- VirusTotal
+- URLScan.io
+- Google Safe Browsing
 
-Para usar, você precisa de **chaves de API** (gratuitas). Veja o arquivo `.env.example` para saber como configurar.
+Antes de usar, você precisa concordar com o envio da URL para esses serviços.
+
+Se não quiser usar APIs externas, tudo bem: a análise local continua funcionando.
 
 ---
 
 ### 📦 Datasets
 
-Gerencia os bancos de dados usados pela ferramenta para verificar links.
+Aqui você baixa e atualiza bases públicas usadas pela análise.
 
-- Clique em **Baixar Todos** para baixar os datasets públicos automaticamente
-- Cada dataset mostra: nome, descrição, tamanho e se está atualizado
-- Alguns datasets requerem download manual (indicado com 📥)
+Use:
 
-Quanto mais datasets você tiver, mais precisa será a análise.
+- `Baixar Todos` para os datasets automáticos
+- `Atualizar` para um dataset específico
+
+Quanto mais bases disponíveis, melhor tende a ser a verificação local.
+
+---
+
+### 📖 Glossário
+
+Serve como referência rápida.
+
+Você pode buscar termos como:
+
+- phishing
+- typosquatting
+- homógrafo
+- WHOIS
+- DGA
+- Random Forest
 
 ---
 
 ### ⚙️ Configurações
 
-Ajustes avançados:
-- **Trigger Words** — palavras que indicam phishing (login, verify, urgent...)
-- **TLDs de Risco** — extensões suspeitas (.tk, .xyz, .top...)
-- **Encurtadores** — serviços que escondem o destino (bit.ly, tinyurl...)
-- **Classificador ML** — treine um modelo de inteligência artificial para melhorar as análises
+Permite:
+
+- ajustar trigger words
+- revisar TLDs de risco
+- ajustar lista de encurtadores
+- ver o estado do modelo ML
+- treinar o classificador localmente
+- ver estatísticas de feedback
 
 ---
 
-## Perguntas Frequentes
+## Perguntas frequentes
 
-### A ferramenta acessa os links que eu colo?
-**Não.** A análise é 100% local por padrão. O link é analisado por padrões e heurísticas, sem acessar o site. A única exceção é o módulo **APIs Externas**, que exige seu consentimento explícito.
+### A ferramenta abre o site que eu colei?
 
-### O que significa "URL defanged"?
-É o link convertido para um formato seguro que não pode ser clicado acidentalmente. Exemplo:
-- Original: `https://evil.com`
-- Defanged: `hxxps[://]evil[.]com`
-
-### Posso usar no celular?
-Sim! Como é uma aplicação web, funciona em qualquer navegador, inclusive no celular. Basta acessar `http://localhost:8501` (ou o IP do computador onde está rodando).
+Não. A análise local trabalha sobre a URL e seus padrões, não sobre a navegação para o site.
 
 ### Preciso de internet?
-Apenas para baixar datasets e usar APIs externas. A análise heurística funciona 100% offline.
 
-### Como protejo a ferramenta com senha?
-Edite o arquivo `.env` e adicione:
+Somente para:
+
+- baixar datasets
+- consultar APIs externas
+- fazer algumas consultas online opcionais
+
+A análise heurística local funciona offline.
+
+### Posso proteger a ferramenta com senha?
+
+Sim. Crie um arquivo `.env` e defina:
+
+```txt
+CYBERURL_PASSWORD=sua_senha
 ```
-CYBERURL_PASSWORD=sua_senha_aqui
+
+Ao abrir a aplicação, será pedida a senha.
+
+### Posso usar no celular?
+
+Não como aplicação nativa. Esta versão foi feita para desktop com PyQt6.
+
+### Como gerar o executável?
+
+No Windows:
+
+```txt
+pip install -r requirements-dev.txt
+python build.py
 ```
-Ao abrir a ferramenta, será solicitada a senha.
-
-### Como mudo o idioma?
-Na barra lateral (sidebar), no final, há um seletor de idioma (🌐). Escolha entre Português, English ou Español.
 
 ---
 
-## Glossário
+## Dicas rápidas de segurança
 
-| Termo | Significado |
-|-------|------------|
-| **URL** | Endereço de um site (ex.: https://google.com) |
-| **Domínio** | Nome principal do site (ex.: google.com) |
-| **TLD** | Extensão do domínio (ex.: .com, .br, .org) |
-| **Phishing** | Golpe que tenta roubar seus dados fingindo ser um site legítimo |
-| **Heurística** | Conjunto de regras para detectar padrões suspeitos |
-| **Dataset** | Banco de dados com URLs conhecidas (maliciosas ou legítimas) |
-| **Defanging** | Converter um link para formato seguro (não clicável) |
-| **DGA** | Domínios gerados automaticamente por malware |
-| **WHOIS** | Registro público com informações sobre quem é dono de um domínio |
-| **Score** | Pontuação de risco de 0 (seguro) a 100 (malicioso) |
-| **ML** | Machine Learning — inteligência artificial que aprende com dados |
+1. Desconfie de urgência exagerada.
+2. Verifique o domínio, não só o cadeado.
+3. Links encurtados escondem o destino.
+4. Cuidado com letras trocadas: `paypal.com` não é `paypa1.com`.
+5. Se a dúvida continuar, não clique. Digite o endereço oficial manualmente.
 
 ---
 
-## Dicas de Segurança
+## Novidades da versão 3.0
 
-1. **Desconfie de urgência** — "Sua conta será bloqueada em 24h!" é quase sempre golpe
-2. **Verifique o domínio** — `paypal.com` é diferente de `paypa1.com` (um usa L, outro usa 1)
-3. **Não clique em links de SMS** — bancos legítimos nunca enviam links por SMS
-4. **Olhe o protocolo** — sites seguros usam `https://` (com S)
-5. **Links encurtados escondem o destino** — use esta ferramenta para verificar antes
-6. **Na dúvida, não clique** — acesse o site digitando diretamente no navegador
-
----
-
-## Novidades da versão 2.1
-
-- **Busca no histórico** — agora é possível pesquisar e filtrar análises anteriores no Dashboard
-- **Modo offline** — quando sem internet, a página de APIs externas mostra um aviso em vez de travar
-- **Relatórios mais seguros** — a exportação HTML agora usa templates Jinja2 com auto-escape
-- **Cenários atualizados** — os cenários de phishing agora são carregados de um arquivo externo (mais fácil de atualizar)
-- **Traduções em JSON** — as traduções (PT/EN/ES) agora ficam em arquivos JSON separados em `locales/`
-- **20 novos testes** — mais confiabilidade nas atualizações futuras
+- interface totalmente migrada para PyQt6
+- geração de executável com PyInstaller sem depender de navegador
+- remoção completa da antiga interface web
+- limpeza de arquivos legados da interface anterior
+- CI atualizada para testes headless e smoke build do executável
