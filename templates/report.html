@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CyberURL Analyst — Relatório</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; max-width: 800px;
+         margin: 0 auto; padding: 20px; background: #fff; color: #333; }
+  .verdict { background: {{ verdict_bg }}; border: 2px solid {{ verdict_fg }}; border-radius: 10px;
+              padding: 20px; text-align: center; margin: 20px 0; }
+  .verdict h1 { color: {{ verdict_fg }}; margin: 0; }
+  .url-box { font-family: 'Courier New', monospace; background: #f5f5f5;
+              border: 1px solid #ddd; border-radius: 6px; padding: 12px;
+              word-break: break-all; color: #666; margin: 12px 0; }
+  .footer { color: #999; font-size: 12px; text-align: center;
+             margin-top: 30px; padding-top: 16px; border-top: 1px solid #eee; }
+  .section { border-radius: 6px; padding: 12px 16px; margin: 8px 0; background: #fafafa; }
+  .section-title { font-weight: bold; font-size: 14px; }
+  .section-content { color: #333; margin-top: 6px; }
+  .section-analogy { background: #f5f5f5; border-radius: 4px; padding: 8px;
+                     margin-top: 6px; font-style: italic; color: #666; }
+  .section-tip { color: #4CAF50; margin-top: 4px; font-size: 13px; }
+  .recs { border: 2px solid #6C63FF; border-radius: 8px; padding: 16px;
+          margin: 16px 0; background: #f3f0ff; }
+  .recs h3 { color: #6C63FF; margin-top: 0; }
+  .recs ul { color: #333; }
+</style>
+</head>
+<body>
+<h1>🛡️ CyberURL Analyst — Relatório de Análise</h1>
+
+<div class="verdict">
+  <h1>{{ report.classification_emoji }} {{ report.classification_label | upper }}</h1>
+  <p style="font-size:18px;margin:8px 0;">Score: <strong>{{ report.score }}/100</strong></p>
+</div>
+
+<div class="url-box">
+  <strong>URL analisada (defanged):</strong><br>
+  {{ report.url_defanged }}
+</div>
+
+<h2 style="color:#333;">📊 Fatores Analisados</h2>
+{% for s in report.sections %}
+<div class="section" style="border-left:4px solid {{ severity_colors.get(s.severity, '#999') }};">
+  <div class="section-title" style="color:{{ severity_colors.get(s.severity, '#999') }};">
+    {{ s.icon }} {{ s.title }}
+  </div>
+  <div class="section-content">{{ s.content }}</div>
+  {% if s.analogy %}
+  <div class="section-analogy">💭 {{ s.analogy }}</div>
+  {% endif %}
+  {% if s.tip %}
+  <div class="section-tip">🛡️ {{ s.tip }}</div>
+  {% endif %}
+</div>
+{% endfor %}
+
+{% if report.api_sections %}
+<h2 style="color:#333;">🔍 Análise Externa</h2>
+{% for s in report.api_sections %}
+<div class="section" style="border-left:4px solid {{ severity_colors.get(s.severity, '#999') }};">
+  <div class="section-title" style="color:{{ severity_colors.get(s.severity, '#999') }};">
+    {{ s.icon }} {{ s.title }}
+  </div>
+  <div class="section-content">{{ s.content }}</div>
+</div>
+{% endfor %}
+{% endif %}
+
+{% if report.recommendations %}
+<div class="recs">
+  <h3>🛡️ Recomendações</h3>
+  <ul>
+  {% for r in report.recommendations %}
+    <li>{{ r }}</li>
+  {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+<div class="footer">{{ report.disclaimer }}</div>
+</body>
+</html>

@@ -1,0 +1,831 @@
+{
+  "categories": [
+    "Todos",
+    "Phishing Bancário",
+    "Smishing (SMS)",
+    "Spear Phishing Corporativo",
+    "Phishing em Rede Social",
+    "WhatsApp / Mensageria",
+    "Telegram / Cripto",
+    "Facebook / Meta",
+    "Instagram / Rede Social",
+    "Quishing (QR Code)",
+    "Vishing (Ligação)",
+    "BEC (Fraude Corporativa)",
+    "Golpe do Pix",
+    "Falso Emprego",
+    "Falsa Notificação Gov.",
+    "E-mail Legítimo",
+    "Notificação Legítima"
+  ],
+  "scenarios": [
+    {
+      "id": "phishing_bank",
+      "category": "Phishing Bancário",
+      "category_icon": "🏦",
+      "channel": "E-mail",
+      "channel_icon": "📧",
+      "title": "Atividade Suspeita na Conta",
+      "sender": "suporte@seguranca-bancobrasil.com",
+      "subject": "⚠️ Ação necessária: atividade suspeita detectada",
+      "body": "Prezado cliente,\n\nDetectamos uma tentativa de acesso não autorizado à sua conta. Para sua segurança, clique no link abaixo e confirme seus dados em até 24 horas ou sua conta será bloqueada permanentemente.\n\nLink: https://seguranca-bancobrasil.com/verificar-conta\n\nAtenciosamente,\nEquipe de Segurança",
+      "url_defanged": "hxxps[://]seguranca-bancobrasil[.]com/verificar-conta",
+      "is_phishing": true,
+      "alerts": [
+        [
+          "Domínio falso",
+          "O Banco do Brasil usa 'bb.com.br', não 'seguranca-bancobrasil.com'."
+        ],
+        [
+          "Urgência artificial",
+          "'24 horas' é tática para pressionar uma decisão impulsiva."
+        ],
+        [
+          "Ameaça de bloqueio",
+          "'Conta bloqueada permanentemente' gera medo e impede reflexão."
+        ],
+        [
+          "Pedido de dados por link",
+          "Bancos NUNCA pedem confirmação de dados por e-mail."
+        ],
+        [
+          "Remetente genérico",
+          "'Prezado cliente' em vez do seu nome real."
+        ],
+        [
+          "E-mail do remetente",
+          "'seguranca-bancobrasil.com' não é domínio oficial do banco."
+        ]
+      ],
+      "lesson": "🛡️ REGRA DE OURO: Quando receber e-mail do banco, NUNCA clique no link. Abra o app do banco ou digite o site oficial no navegador.",
+      "url_display": "https://seguranca-bancobrasil.com/verificar-conta"
+    },
+    {
+      "id": "smishing_marketplace",
+      "category": "Smishing (SMS)",
+      "category_icon": "📱",
+      "channel": "SMS",
+      "channel_icon": "💬",
+      "title": "Prêmio Falso de Marketplace",
+      "sender": "+55 11 9XXXX-XXXX",
+      "subject": "",
+      "body": "MERCADO LIVRE: Parabéns! Você foi selecionado para nossa promoção exclusiva. Resgate seu prêmio de R$ 500 em créditos clicando aqui:\n\nhttps://promo-especial.mercadolivre.deals/oferta\n\nVálido por 2 horas! Não perca!",
+      "url_defanged": "hxxps[://]promo-especial[.]mercadolivre[.]deals/oferta",
+      "is_phishing": true,
+      "alerts": [
+        [
+          "TLD incorreto",
+          "O Mercado Livre usa '.com.br', não '.deals'."
+        ],
+        [
+          "Prêmio não solicitado",
+          "Promoções legítimas não pedem resgate por SMS."
+        ],
+        [
+          "Urgência extrema",
+          "'2 horas' impede que você pesquise e reflita."
+        ],
+        [
+          "Domínio falso",
+          "Apesar de conter 'mercadolivre', o domínio real é outro."
+        ],
+        [
+          "Canal suspeito",
+          "Empresas legítimas usam app e e-mail, não SMS com links."
+        ],
+        [
+          "Subdomínio enganoso",
+          "'promo-especial' com hífens é construído para parecer legítimo."
+        ]
+      ],
+      "lesson": "🛡️ Promoções legítimas são anunciadas no app ou site oficial. Se recebeu por SMS, é quase certamente golpe.",
+      "url_display": "https://promo-especial.mercadolivre.deals/oferta"
+    },
+    {
+      "id": "spear_phishing_corp",
+      "category": "Spear Phishing Corporativo",
+      "category_icon": "🏢",
+      "channel": "E-mail",
+      "channel_icon": "📧",
+      "title": "Falsa Solicitação do RH",
+      "sender": "rh@empresa-suporte.net",
+      "subject": "URGENTE: Atualização cadastral obrigatória - prazo hoje",
+      "body": "Olá colaborador,\n\nConforme comunicado interno, todos os funcionários devem atualizar seus dados cadastrais até o final do dia de hoje através do link abaixo:\n\nhttps://empresa-suporte.net/rh/atualizacao-cadastral\n\nO não cumprimento resultará em suspensão do pagamento.\n\nAtenciosamente,\nDepartamento de Recursos Humanos",
+      "url_defanged": "hxxps[://]empresa-suporte[.]net/rh/atualizacao-cadastral",
+      "is_phishing": true,
+      "alerts": [
+        [
+          "Domínio genérico",
+          "'empresa-suporte.net' não é o domínio da sua empresa."
+        ],
+        [
+          "Urgência extrema",
+          "'Até o final do dia' pressiona ação imediata."
+        ],
+        [
+          "Ameaça financeira",
+          "'Suspensão do pagamento' gera pânico."
+        ],
+        [
+          "Canal inadequado",
+          "Atualizações cadastrais são feitas no sistema interno, não por link."
+        ],
+        [
+          "Tratamento impessoal",
+          "'Olá colaborador' em vez do seu nome."
+        ],
+        [
+          "TLD incomum",
+          "'.net' para comunicação interna de RH é suspeito."
+        ]
+      ],
+      "lesson": "🛡️ Verifique com o RH pelo telefone ou pessoalmente antes de clicar em qualquer link que peça dados pessoais ou ameace consequências.",
+      "url_display": "https://empresa-suporte.net/rh/atualizacao-cadastral"
+    },
+    {
+      "id": "social_media_phishing",
+      "category": "Phishing em Rede Social",
+      "category_icon": "📸",
+      "channel": "Mensagem Direta",
+      "channel_icon": "💬",
+      "title": "Verificação Falsa de Conta",
+      "sender": "@instagram_suporte_oficial",
+      "subject": "",
+      "body": "Sua conta foi sinalizada por violação dos termos de uso. Se você não verificar sua identidade em 48 horas, sua conta será excluída permanentemente.\n\nVerifique aqui: https://instagram-verify.com/account-check\n\nEquipe Instagram",
+      "url_defanged": "hxxps[://]instagram-verify[.]com/account-check",
+      "is_phishing": true,
+      "alerts": [
+        [
+          "Domínio falso",
+          "O Instagram usa 'instagram.com', não 'instagram-verify.com'."
+        ],
+        [
+          "Ameaça de exclusão",
+          "'Conta excluída permanentemente' gera desespero."
+        ],
+        [
+          "Prazo artificial",
+          "'48 horas' cria pressão desnecessária."
+        ],
+        [
+          "Conta de suporte falsa",
+          "O Instagram oficial não envia DMs pedindo verificação."
+        ],
+        [
+          "Palavras-gatilho",
+          "'verify', 'account-check' são termos clássicos de phishing."
+        ]
+      ],
+      "lesson": "🛡️ Plataformas como Instagram NUNCA pedem verificação por DM. Verificações reais são feitas dentro do próprio app, nas configurações.",
+      "url_display": "https://instagram-verify.com/account-check"
+    },
+    {
+      "id": "legit_email",
+      "category": "E-mail Legítimo",
+      "category_icon": "✅",
+      "channel": "E-mail",
+      "channel_icon": "📧",
+      "title": "Confirmação de Compra (Legítimo)",
+      "sender": "noreply@amazon.com.br",
+      "subject": "Confirmação do pedido #305-1234567-8901234",
+      "body": "Olá João,\n\nSeu pedido #305-1234567-8901234 foi confirmado.\n\nProduto: Fone de Ouvido Bluetooth XYZ\nValor: R$ 149,90\nPrevisão de entrega: 15-20 dias úteis\n\nAcompanhe seu pedido em: https://www.amazon.com.br/meus-pedidos\n\nObrigado por comprar na Amazon!",
+      "url_defanged": "https://www.amazon.com.br/meus-pedidos",
+      "is_phishing": false,
+      "alerts": [
+        [
+          "Domínio oficial",
+          "'amazon.com.br' é o domínio legítimo da Amazon Brasil."
+        ],
+        [
+          "Personalização",
+          "O e-mail usa seu nome (João), não 'Prezado cliente'."
+        ],
+        [
+          "Detalhes específicos",
+          "Contém número do pedido, produto e valor — dados reais."
+        ],
+        [
+          "Sem urgência",
+          "Não há ameaças nem prazos para clicar."
+        ],
+        [
+          "Sem pedido de dados",
+          "Não solicita confirmação de dados pessoais."
+        ]
+      ],
+      "lesson": "✅ E-mails legítimos geralmente: usam seu nome, contêm detalhes específicos da compra, não criam urgência artificial e não pedem confirmação de dados pessoais.",
+      "url_display": "https://www.amazon.com.br/meus-pedidos"
+    },
+    {
+      "id": "whatsapp_code_theft",
+      "category": "WhatsApp / Mensageria",
+      "category_icon": "💬",
+      "channel": "WhatsApp",
+      "channel_icon": "📱",
+      "title": "Roubo de Código de Verificação",
+      "sender": "+55 11 9XXXX-XXXX (contato conhecido)",
+      "subject": "",
+      "body": "Oi! Tudo bem? Desculpa te incomodar...\n\nEu tentei cadastrar meu número em um site e por engano coloquei o seu. Você recebeu um SMS com um código de 6 dígitos? Pode me enviar por favor? É rapidinho!\n\nO código veio por SMS, começa com 'WhatsApp code:...'\n\nObrigado!! 🙏",
+      "url_defanged": "",
+      "is_phishing": true,
+      "alerts": [
+        [
+          "Código de verificação",
+          "O código de 6 dígitos do SMS é a CHAVE DE ACESSO à sua conta WhatsApp. Quem tem o código, tem a conta."
+        ],
+        [
+          "Engenharia social",
+          "O golpista finge ser alguém conhecido ou finge um 'erro' para parecer inocente."
+        ],
+        [
+          "Conta clonada",
+          "Se você enviar o código, o criminoso ativa SEU WhatsApp no celular dele."
+        ],
+        [
+          "Tom amigável",
+          "A linguagem casual e os emojis são usados para baixar sua guarda."
+        ],
+        [
+          "Pedido incomum",
+          "Nenhum serviço legítimo pede que você reenvie códigos recebidos por SMS."
+        ],
+        [
+          "Conta comprometida",
+          "O 'amigo' que te mandou a mensagem provavelmente já foi hackeado."
+        ]
+      ],
+      "lesson": "🛡️ REGRA DE OURO: NUNCA compartilhe códigos de verificação recebidos por SMS com NINGUÉM, nem amigos ou familiares. Esse código é como a senha da sua conta. Se alguém pedir, ligue para a pessoa para confirmar.",
+      "url_display": ""
+    },
+    {
+      "id": "whatsapp_fake_support",
+      "category": "WhatsApp / Mensageria",
+      "category_icon": "💬",
+      "channel": "WhatsApp",
+      "channel_icon": "📱",
+      "title": "Falso Suporte Técnico do WhatsApp",
+      "sender": "+1 (555) 012-3456 (foto: logo WhatsApp)",
+      "subject": "",
+      "body": "🔔 *Notificação Oficial do WhatsApp*\n\nDetectamos atividade suspeita na sua conta. Para evitar o bloqueio permanente, confirme sua identidade acessando o link abaixo em até 12 horas:\n\nhttps://whatsapp-verify-account.com/confirm-id\n\n⚠️ Caso não confirme, sua conta será desativada.\n\nEquipe de Segurança WhatsApp",
+      "url_defanged": "hxxps[://]whatsapp-verify-account[.]com/confirm-id",
+      "is_phishing": true,
+      "alerts": [
+        [
+          "WhatsApp não envia mensagens",
+          "O WhatsApp NUNCA entra em contato com usuários por mensagem para pedir verificação."
+        ],
+        [
+          "Domínio falso",
+          "O domínio oficial é 'whatsapp.com', não 'whatsapp-verify-account.com'."
+        ],
+        [
+          "Urgência artificial",
+          "'12 horas' é prazo inventado para pressionar."
+        ],
+        [
+          "Ameaça de bloqueio",
+          "'Conta desativada' gera pânico e impede pensamento racional."
+        ],
+        [
+          "Número internacional",
+          "O número não é brasileiro e não pertence ao WhatsApp."
+        ],
+        [
+          "Formatação suspeita",
+          "Uso de asteriscos (*negrito*) e emojis tenta parecer oficial."
+        ]
+      ],
+      "lesson": "🛡️ O WhatsApp só se comunica dentro do app através de banners ou pela Central de Ajuda. Se receber mensagem de 'suporte', é golpe.",
+      "url_display": "https://whatsapp-verify-account.com/confirm-id"
+    },
+    {
+      "id": "telegram_crypto_scam",
+      "category": "Telegram / Cripto",
+      "category_icon": "🪙",
+      "channel": "Telegram",
+      "channel_icon": "✈️",
+      "title": "Investimento em Criptomoedas com Retorno Garantido",
+      "sender": "@crypto_expert_oficial (grupo com 50K membros)",
+      "subject": "",
+      "body": "🚀💰 OPORTUNIDADE EXCLUSIVA 💰🚀\n\nEstou lucrando R$ 5.000/dia com trading de cripto usando uma plataforma secreta que poucos conhecem!\n\nInvestimento mínimo: R$ 200\nRetorno GARANTIDO: 500% em 7 dias\n\nAcesse agora e comece a lucrar:\nhttps://crypto-profit-guaranteed.xyz/register?ref=vip\n\n⚠️ Vagas limitadas! Só mais 15 vagas VIP hoje!\n\nPrints dos meus lucros no canal ➡️",
+      "url_defanged": "hxxps[://]crypto-profit-guaranteed[.]xyz/register?ref=vip",
+      "is_phishing": true,
+      "alerts": [
+        [
+          "Retorno garantido",
+          "Nenhum investimento legítimo GARANTE lucro. Renda variável pode dar prejuízo."
+        ],
+        [
+          "Valores irreais",
+          "'500% em 7 dias' é matematicamente insustentável — é esquema pirâmide/ponzi."
+        ],
+        [
+          "TLD suspeito",
+          "'.xyz' é TLD de alto risco frequentemente usado em golpes."
+        ],
+        [
+          "Urgência e escassez",
+          "'15 vagas' e 'só hoje' criam FOMO (medo de perder a oportunidade)."
+        ],
+        [
+          "Prints fabricados",
+          "Screenshots de lucros são facilmente editados ou fabricados."
+        ],
+        [
+          "Grupo inflado",
+          "Grupos com milhares de membros são criados com bots para parecer legítimo."
+        ],
+        [
+          "Plataforma secreta",
+          "Plataformas sérias são regulamentadas pela CVM, não 'secretas'."
+        ]
+      ],
+      "lesson": "🛡️ Se alguém promete retorno garantido ou lucros absurdos, é GOLPE. Investimentos legítimos são regulados pela CVM/Banco Central e nunca garantem rentabilidade. Desconfie de grupos de Telegram com 'gurus' de cripto.",
+      "url_display": "https://crypto-profit-guaranteed.xyz/register?ref=vip"
+    },
+    {
+      "id": "facebook_account_disabled",
+      "category": "Facebook / Meta",
+      "category_icon": "👤",
+      "channel": "E-mail / Notificação",
+      "channel_icon": "📧",
+      "title": "Alerta Falso de Conta Desativada",
+      "sender": "security@facebookmail-support.com",
+      "subject": "Sua conta do Facebook será desativada em 24 horas",
+      "body": "Prezado usuário do Facebook,\n\nSua conta foi sinalizada por violação dos Termos de Serviço. Constatamos que sua conta está sendo usada de forma irregular.\n\nSe isso for um engano, confirme sua identidade clicando abaixo para evitar a desativação permanente:\n\nhttps://facebook-appeals-center.com/verify-identity\n\nVocê tem 24 horas para contestar esta decisão.\n\nEquipe de Políticas do Facebook",
+      "url_defanged": "hxxps[://]facebook-appeals-center[.]com/verify-identity",
+      "is_phishing": true,
+      "alerts": [
+        [
+          "Domínio falso",
+          "O Facebook usa 'facebook.com', não 'facebook-appeals-center.com'."
+        ],
+        [
+          "E-mail do remetente",
+          "'facebookmail-support.com' não é domínio oficial da Meta."
+        ],
+        [
+          "Prazo de 24 horas",
+          "Urgência artificial para impedir que você verifique a informação."
+        ],
+        [
+          "Ameaça de exclusão",
+          "'Desativação permanente' gera medo desproporcional."
+        ],
+        [
+          "Linguagem genérica",
+          "'Prezado usuário' em vez do seu nome real."
+        ],
+        [
+          "Processo falso",
+          "Recursos reais do Facebook são feitos DENTRO do app, não por links externos."
+        ]
+      ],
+      "lesson": "🛡️ O Facebook envia notificações DENTRO do próprio aplicativo. Se receber e-mail ameaçando desativar a conta, entre no app diretamente e verifique em Configurações > Suporte.",
+      "url_display": "https://facebook-appeals-center.com/verify-identity"
+    },
+    {
+      "id": "facebook_marketplace_scam",
+      "category": "Facebook / Meta",
+      "category_icon": "👤",
+      "channel": "Messenger",
+      "channel_icon": "💬",
+      "title": "Comprador Falso no Marketplace",
+      "sender": "Maria Silva (perfil com foto e 200 amigos)",
+      "subject": "",
+      "body": "Oi! Vi seu anúncio no Marketplace, quero comprar!\nPosso pagar agora pelo MercadoPago? Já fiz o depósito!\n\nSó preciso que você confirme o recebimento neste link para liberar o pagamento:\n\nhttps://mercadopago-confirmar.site/pagamento/confirmar?id=83921\n\nConfirma aí que já está tudo certo! 😊",
+      "url_defanged": "hxxps[://]mercadopago-confirmar[.]site/pagamento/confirmar?id=83921",
+      "is_phishing": true,
+      "alerts": [
+        [
+          "Domínio falso",
+          "O MercadoPago usa 'mercadopago.com.br', não 'mercadopago-confirmar.site'."
+        ],
+        [
+          "TLD suspeito",
+          "'.site' é TLD genérico frequentemente usado em golpes."
+        ],
+        [
+          "Lógica invertida",
+          "O VENDEDOR não precisa 'confirmar recebimento' — quem confirma é o comprador."
+        ],
+        [
+          "Pressa artificial",
+          "'Já fiz o depósito' pressiona para agir sem verificar."
+        ],
+        [
+          "Perfil fabricado",
+          "Perfis com fotos e amigos podem ser criados ou roubados."
+        ],
+        [
+          "Link externo",
+          "Transações do MercadoPago são feitas no app, não por links no Messenger."
+        ]
+      ],
+      "lesson": "🛡️ Em vendas online, NUNCA clique em links enviados pelo comprador. Verifique pagamentos diretamente no app do MercadoPago/banco. Golpistas invertem a lógica para fazer o vendedor entregar dados.",
+      "url_display": "https://mercadopago-confirmar.site/pagamento/confirmar?id=83921"
+    },
+    {
+      "id": "instagram_verification_badge",
+      "category": "Instagram / Rede Social",
+      "category_icon": "📸",
+      "channel": "DM / E-mail",
+      "channel_icon": "💬",
+      "title": "Oferta de Selo de Verificação (Badge Azul)",
+      "sender": "@instagram.verified.team",
+      "subject": "",
+      "body": "Parabéns! 🎉 Sua conta foi pré-aprovada para receber o selo de verificação do Instagram (✓ azul)!\n\nVocê foi selecionado com base no seu engajamento e número de seguidores.\n\nComplete a verificação em até 48h para não perder a vaga:\nhttps://instagram-verified-badge.com/apply\n\n⚠️ ATENÇÃO: Não compartilhe este link. É exclusivo para sua conta.\n\nInstagram Verification Team",
+      "url_defanged": "hxxps[://]instagram-verified-badge[.]com/apply",
+      "is_phishing": true,
+      "alerts": [
+        [
+          "Domínio falso",
+          "O Instagram usa 'instagram.com', não 'instagram-verified-badge.com'."
+        ],
+        [
+          "Selo não é vendido",
+          "A verificação do Instagram é solicitada nas CONFIGURAÇÕES do app, não por DM."
+        ],
+        [
+          "Prazo artificial",
+          "'48 horas' cria urgência falsa."
+        ],
+        [
+          "Exclusividade falsa",
+          "'Não compartilhe este link' impede que você peça opinião de outros."
+        ],
+        [
+          "Conta não oficial",
+          "'@instagram.verified.team' não é conta oficial do Instagram."
+        ],
+        [
+          "Apelo à vaidade",
+          "Golpistas exploram o desejo por status e visibilidade nas redes."
+        ]
+      ],
+      "lesson": "🛡️ O selo azul do Instagram é solicitado DENTRO do app em Configurações > Conta > Solicitar verificação. O Instagram NUNCA vende ou oferece verificação por DM ou e-mail.",
+      "url_display": "https://instagram-verified-badge.com/apply"
+    },
+    {
+      "id": "quishing_parking_ticket",
+      "category": "Quishing (QR Code)",
+      "category_icon": "📷",
+      "channel": "Papel / Físico",
+      "channel_icon": "📄",
+      "title": "Multa Falsa com QR Code no Para-brisa",
+      "sender": "(panfleto colado no carro)",
+      "subject": "MULTA DE TRÂNSITO — Pague com desconto via QR Code",
+      "body": "NOTIFICAÇÃO DE INFRAÇÃO\n━━━━━━━━━━━━━━━━━━━━━━━━\nPlaca: *** (seu veículo)\nInfração: Estacionamento irregular\nValor: R$ 293,47\nDesconto de 40% se pagar em 48h!\n\n📱 Escaneie o QR Code abaixo para pagar com desconto:\n[QR CODE aponta para: https://multas-detran-pagar.com/qr/pix]\n\nOu acesse: https://multas-detran-pagar.com/qr/pix\n\nDepartamento de Trânsito",
+      "url_defanged": "hxxps[://]multas-detran-pagar[.]com/qr/pix",
+      "is_phishing": true,
+      "alerts": [
+        [
+          "Domínio falso",
+          "O DETRAN usa sites oficiais do governo (.gov.br), não 'multas-detran-pagar.com'."
+        ],
+        [
+          "QR Code malicioso",
+          "QR Codes podem direcionar para qualquer site — você não vê a URL antes de escanear."
+        ],
+        [
+          "Desconto irreal",
+          "Multas reais têm desconto no boleto oficial, não em sites aleatórios."
+        ],
+        [
+          "Canal físico + digital",
+          "Golpistas colam panfletos em carros em estacionamentos públicos."
+        ],
+        [
+          "Pressão de tempo",
+          "'48 horas' impede verificação no site oficial do DETRAN."
+        ],
+        [
+          "Dados genéricos",
+          "A 'multa' não tem número do auto de infração nem dados reais."
+        ]
+      ],
+      "lesson": "🛡️ QUISHING é phishing por QR Code. Nunca escaneie QR Codes de panfletos ou adesivos suspeitos. Multas reais são consultadas em detran.gov.br ou pelo app do DETRAN.",
+      "url_display": "https://multas-detran-pagar.com/qr/pix"
+    },
+    {
+      "id": "vishing_bank_call",
+      "category": "Vishing (Ligação)",
+      "category_icon": "📞",
+      "channel": "Telefone",
+      "channel_icon": "📞",
+      "title": "Falsa Central Telefônica do Banco",
+      "sender": "0800-XXX-XXXX (parece ser do banco)",
+      "subject": "",
+      "body": "TRANSCRIÇÃO DA LIGAÇÃO:\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n\nAtendente: 'Boa tarde! Aqui é da Central de Segurança do Banco Itaú. Identificamos uma compra suspeita no valor de R$ 3.499,00 no seu cartão final 1234. O senhor reconhece?'\n\nVocê: 'Não! Não fiz essa compra!'\n\nAtendente: 'Então vamos cancelar imediatamente. Para sua segurança, preciso que o senhor acesse nosso portal seguro e confirme seus dados:\n\nhttps://itau-seguranca-cartao.com/cancelar-compra'\n\nAtendente: 'Ou se preferir, posso te enviar o link por SMS.'",
+      "url_defanged": "hxxps[://]itau-seguranca-cartao[.]com/cancelar-compra",
+      "is_phishing": true,
+      "alerts": [
+        [
+          "Domínio falso",
+          "O Itaú usa 'itau.com.br', não 'itau-seguranca-cartao.com'."
+        ],
+        [
+          "Ligação não solicitada",
+          "Bancos ligam, mas NUNCA pedem dados por telefone ou enviam links."
+        ],
+        [
+          "Número falsificado",
+          "Golpistas usam 'spoofing' para fazer qualquer número aparecer no identificador."
+        ],
+        [
+          "Compra fictícia",
+          "A 'compra de R$ 3.499' é inventada para gerar pânico imediato."
+        ],
+        [
+          "Cartão parcial",
+          "'Final 1234' pode ser chute ou dado obtido em vazamentos."
+        ],
+        [
+          "Solicita dados por link",
+          "Bancos reais cancelam compras pelo app ou pela central real, sem links."
+        ]
+      ],
+      "lesson": "🛡️ VISHING é phishing por voz. Se receber ligação do 'banco', DESLIGUE e ligue VOCÊ para o número oficial no verso do cartão. Nunca diga senhas, códigos ou acesse links passados por telefone.",
+      "url_display": "https://itau-seguranca-cartao.com/cancelar-compra"
+    },
+    {
+      "id": "bec_ceo_transfer",
+      "category": "BEC (Fraude Corporativa)",
+      "category_icon": "🏢",
+      "channel": "E-mail",
+      "channel_icon": "📧",
+      "title": "CEO Solicita Transferência Urgente",
+      "sender": "ceo.roberto@empresa-corp.net",
+      "subject": "CONFIDENCIAL — Transferência urgente",
+      "body": "Olá,\n\nEstou em reunião e não posso falar agora. Preciso que você faça uma transferência URGENTE de R$ 47.000,00 para o fornecedor abaixo. É referente a um contrato que estamos fechando hoje.\n\nDados para transferência:\nPix: https://pagamento-fornecedor-corp.com/pix/transfer\n\nFaça AGORA e me confirme por aqui. Não comente com ninguém pois é confidencial.\n\nAtt, Roberto (CEO)",
+      "url_defanged": "hxxps[://]pagamento-fornecedor-corp[.]com/pix/transfer",
+      "is_phishing": true,
+      "alerts": [
+        [
+          "E-mail de domínio diferente",
+          "'empresa-corp.net' não é o domínio real da empresa."
+        ],
+        [
+          "Pedido de sigilo",
+          "'Não comente com ninguém' impede que você confirme com colegas."
+        ],
+        [
+          "Urgência extrema",
+          "'AGORA', 'urgente', 'hoje' — tripla pressão temporal."
+        ],
+        [
+          "CEO por e-mail",
+          "CEOs não pedem transferências urgentes por e-mail — usam canais formais."
+        ],
+        [
+          "Valor alto sem aprovação",
+          "Transferências desse valor exigem processo de aprovação."
+        ],
+        [
+          "Link para Pix",
+          "Pagamentos legítimos usam chave Pix verificada, não links em sites estranhos."
+        ]
+      ],
+      "lesson": "🛡️ BEC (Business Email Compromise) é um dos golpes mais caros do mundo. SEMPRE confirme pedidos financeiros por telefone ou pessoalmente. Nenhuma transferência urgente é tão urgente que não permita uma ligação.",
+      "url_display": "https://pagamento-fornecedor-corp.com/pix/transfer"
+    },
+    {
+      "id": "pix_comprovante_falso",
+      "category": "Golpe do Pix",
+      "category_icon": "💸",
+      "channel": "WhatsApp",
+      "channel_icon": "📱",
+      "title": "Comprovante Falso de Pix e Link de Estorno",
+      "sender": "+55 21 9XXXX-XXXX",
+      "subject": "",
+      "body": "Oi, fiz um Pix errado pra você no valor de R$ 980,00 😱\nAcabei digitando seu número ao invés do da minha filha.\n\n[IMAGEM: comprovante de Pix — aparentemente do Nubank]\n\nPode devolver por favor? Segue o link do estorno automático:\nhttps://nubank-estorno-pix.com/devolver?valor=980\n\nSe preferir, minha chave Pix é: 21999999999\n\nPor favor, preciso muito desse dinheiro 🙏😢",
+      "url_defanged": "hxxps[://]nubank-estorno-pix[.]com/devolver?valor=980",
+      "is_phishing": true,
+      "alerts": [
+        [
+          "Comprovante falso",
+          "Comprovantes de Pix são facilmente editados em editores de imagem."
+        ],
+        [
+          "Link de estorno falso",
+          "'nubank-estorno-pix.com' não é domínio do Nubank (nubank.com.br)."
+        ],
+        [
+          "Apelo emocional",
+          "'Preciso muito' e emojis de choro são manipulação emocional."
+        ],
+        [
+          "Pix nunca veio",
+          "Confira seu EXTRATO no app do banco — o Pix provavelmente nunca existiu."
+        ],
+        [
+          "Duas opções de golpe",
+          "O link rouba dados E a chave Pix pode pertencer ao golpista."
+        ],
+        [
+          "Golpe do Pix errado",
+          "Um dos golpes mais comuns do Brasil — a vítima 'devolve' dinheiro que nunca recebeu."
+        ]
+      ],
+      "lesson": "🛡️ Se alguém disser que fez Pix errado, PRIMEIRO verifique seu extrato no app do banco. Se realmente entrou, devolva usando o mecanismo de devolução (MED) do próprio banco — NUNCA por links ou chaves de terceiros.",
+      "url_display": "https://nubank-estorno-pix.com/devolver?valor=980"
+    },
+    {
+      "id": "fake_job_offer",
+      "category": "Falso Emprego",
+      "category_icon": "💼",
+      "channel": "WhatsApp / SMS",
+      "channel_icon": "📱",
+      "title": "Vaga de Emprego com Cadastro Online",
+      "sender": "+55 11 9XXXX-XXXX",
+      "subject": "",
+      "body": "📢 VAGA URGENTE — Trabalhe de casa!\n\nEmpresa multinacional contratando para trabalho remoto.\nSalário: R$ 3.000 a R$ 8.000/mês\nRequisitos: celular com internet\nHorário: flexível, 2-3 horas/dia\n\nVagas limitadas! Cadastre-se agora:\nhttps://vagas-emprego-remoto.com/cadastro-rh\n\nInício imediato! Não é necessário experiência.\n✅ Mais de 2.000 pessoas já foram contratadas!",
+      "url_defanged": "hxxps[://]vagas-emprego-remoto[.]com/cadastro-rh",
+      "is_phishing": true,
+      "alerts": [
+        [
+          "Salário irreal",
+          "R$ 8.000 para 2-3 horas/dia sem experiência não existe."
+        ],
+        [
+          "Requisitos zero",
+          "'Celular com internet' como único requisito é sinal de golpe."
+        ],
+        [
+          "Empresa sem nome",
+          "Não menciona o nome da empresa — é sempre 'multinacional'."
+        ],
+        [
+          "Domínio genérico",
+          "'vagas-emprego-remoto.com' não é site de recrutamento real."
+        ],
+        [
+          "FOMO",
+          "'Vagas limitadas' e '2.000 contratados' criam pressão e falsa prova social."
+        ],
+        [
+          "Início imediato",
+          "Processos seletivos reais têm etapas — entrevista, contrato, etc."
+        ]
+      ],
+      "lesson": "🛡️ Vagas legítimas são publicadas em LinkedIn, Gupy, Catho, ou no site da empresa. Desconfie de vagas por WhatsApp com salários altos, sem nome de empresa e sem processo seletivo.",
+      "url_display": "https://vagas-emprego-remoto.com/cadastro-rh"
+    },
+    {
+      "id": "gov_receita_federal",
+      "category": "Falsa Notificação Gov.",
+      "category_icon": "🏛️",
+      "channel": "E-mail / SMS",
+      "channel_icon": "📧",
+      "title": "Falsa Notificação da Receita Federal",
+      "sender": "notificacao@receita-federal-gov.com",
+      "subject": "URGENTE: Pendência no seu CPF — Regularize agora",
+      "body": "RECEITA FEDERAL DO BRASIL\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\nPrezado contribuinte,\n\nIdentificamos pendências no seu CPF que podem resultar em bloqueio do documento e inscrição na Dívida Ativa da União.\n\nSituação: CPF IRREGULAR\nPrazo para regularização: 5 dias úteis\n\nRegularize agora: https://receita-federal-gov.com/regularizar-cpf\n\nO não cumprimento resultará em multa e restrições.\n\nMinistério da Fazenda / Receita Federal",
+      "url_defanged": "hxxps[://]receita-federal-gov[.]com/regularizar-cpf",
+      "is_phishing": true,
+      "alerts": [
+        [
+          "Domínio falso",
+          "A Receita Federal usa 'gov.br/receitafederal', não 'receita-federal-gov.com'."
+        ],
+        [
+          "TLD errado",
+          "Sites do governo brasileiro usam '.gov.br', nunca '.com'."
+        ],
+        [
+          "Remetente falso",
+          "'receita-federal-gov.com' imita mas NÃO é domínio governamental."
+        ],
+        [
+          "Ameaça jurídica",
+          "'Dívida Ativa' e 'bloqueio do CPF' geram pânico."
+        ],
+        [
+          "Prazo curto",
+          "'5 dias úteis' pressiona para agir sem pesquisar."
+        ],
+        [
+          "Sem dados reais",
+          "Não informa seu nome, CPF parcial, nem número de protocolo."
+        ]
+      ],
+      "lesson": "🛡️ A Receita Federal se comunica pelo e-CAC (gov.br) ou por carta registrada. NUNCA envia links por e-mail ou SMS. Verifique pendências no site oficial: gov.br/receitafederal",
+      "url_display": "https://receita-federal-gov.com/regularizar-cpf"
+    },
+    {
+      "id": "telegram_fake_airdrop",
+      "category": "Telegram / Cripto",
+      "category_icon": "🪙",
+      "channel": "Telegram",
+      "channel_icon": "✈️",
+      "title": "Airdrop Falso de Criptomoeda",
+      "sender": "@binance_airdrop_official (bot)",
+      "subject": "",
+      "body": "🎁 BINANCE MEGA AIRDROP 🎁\n\nA Binance está distribuindo 5.000 BNB para comemorar 10 milhões de usuários no Brasil!\n\nVocê foi selecionado para receber até 2.5 BNB (≈ R$ 7.500)!\n\nPara participar:\n1️⃣ Conecte sua carteira\n2️⃣ Verifique elegibilidade\n3️⃣ Receba seus tokens!\n\n🔗 https://binance-airdrop-bnb.org/claim\n\n⏰ Termina em 3 horas! Não perca!",
+      "url_defanged": "hxxps[://]binance-airdrop-bnb[.]org/claim",
+      "is_phishing": true,
+      "alerts": [
+        [
+          "Domínio falso",
+          "A Binance usa 'binance.com', não 'binance-airdrop-bnb.org'."
+        ],
+        [
+          "Conectar carteira = roubo",
+          "'Conecte sua carteira' dá ao golpista acesso total aos seus fundos."
+        ],
+        [
+          "Valores irreais",
+          "'2.5 BNB grátis' — nenhuma empresa distribui milhares de reais sem motivo."
+        ],
+        [
+          "Urgência extrema",
+          "'3 horas' é prazo absurdo para impedir verificação."
+        ],
+        [
+          "Bot no Telegram",
+          "Bots com nomes similares a empresas são criados em segundos."
+        ],
+        [
+          "Airdrop falso",
+          "Airdrops reais são anunciados no site oficial e nunca pedem conexão de carteira por link."
+        ]
+      ],
+      "lesson": "🛡️ NUNCA conecte sua carteira crypto em sites recebidos por Telegram. Airdrops reais são anunciados nos canais oficiais verificados das exchanges. Ao conectar sua carteira em um site malicioso, você perde TODOS os fundos.",
+      "url_display": "https://binance-airdrop-bnb.org/claim"
+    },
+    {
+      "id": "legit_nubank_notification",
+      "category": "Notificação Legítima",
+      "category_icon": "✅",
+      "channel": "Push / App",
+      "channel_icon": "📱",
+      "title": "Notificação Real do Nubank (Legítimo)",
+      "sender": "Nubank (via notificação push do app)",
+      "subject": "Compra aprovada no cartão",
+      "body": "Compra aprovada 💜\n\nR$ 32,90 no cartão final •••• 5678\niFood\n22/02/2026 às 19:47\n\nNão reconhece? Abra o app e bloqueie o cartão.\n\n(Essa notificação foi enviada pelo app do Nubank instalado no seu celular)",
+      "url_defanged": "",
+      "is_phishing": false,
+      "alerts": [
+        [
+          "Via app oficial",
+          "A notificação veio pelo app instalado no celular, não por SMS ou e-mail com link."
+        ],
+        [
+          "Valor específico",
+          "Mostra valor exato, loja e horário — dados que só o banco real tem."
+        ],
+        [
+          "Sem link externo",
+          "Não contém nenhum link — pede para abrir o app diretamente."
+        ],
+        [
+          "Sem urgência artificial",
+          "Não ameaça bloquear conta nem cria prazos."
+        ],
+        [
+          "Ação pelo app",
+          "'Abra o app e bloqueie' — direciona para o canal oficial, não para link."
+        ]
+      ],
+      "lesson": "✅ Notificações legítimas vêm pelo app oficial, mostram dados reais da transação, não contêm links e direcionam para ações dentro do app.",
+      "url_display": ""
+    },
+    {
+      "id": "legit_gov_br",
+      "category": "Notificação Legítima",
+      "category_icon": "✅",
+      "channel": "E-mail",
+      "channel_icon": "📧",
+      "title": "E-mail Real do Gov.br (Legítimo)",
+      "sender": "noreply@acesso.gov.br",
+      "subject": "Novo acesso à sua conta Gov.br",
+      "body": "Olá, Maria da Silva\n\nUm novo acesso foi realizado na sua conta Gov.br.\n\nData: 22/02/2026 às 14:32\nDispositivo: Chrome — Windows 11\nLocal: São Paulo, SP\n\nSe foi você, ignore este e-mail.\nSe não reconhece, acesse gov.br e altere sua senha.\n\nGoverno Federal — Plataforma Gov.br",
+      "url_defanged": "",
+      "is_phishing": false,
+      "alerts": [
+        [
+          "Domínio correto",
+          "'acesso.gov.br' é domínio legítimo do governo brasileiro."
+        ],
+        [
+          "Personalização",
+          "Usa o nome completo 'Maria da Silva', não 'Prezado contribuinte'."
+        ],
+        [
+          "Detalhes reais",
+          "Data, hora, dispositivo e local do acesso — dados verificáveis."
+        ],
+        [
+          "Sem link no corpo",
+          "Não contém link direto — sugere acessar 'gov.br' digitando no navegador."
+        ],
+        [
+          "Tom calmo",
+          "'Se foi você, ignore' — sem urgência, sem ameaças."
+        ]
+      ],
+      "lesson": "✅ E-mails legítimos do governo usam domínios '.gov.br', incluem seu nome real, detalhes verificáveis, e NÃO enviam links diretos no corpo do e-mail.",
+      "url_display": ""
+    }
+  ]
+}

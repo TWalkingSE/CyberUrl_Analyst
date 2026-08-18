@@ -1,0 +1,48 @@
+# ── Ambiente e segredos ──
+.env
+*.env.local
+
+# ── Python bytecode ──
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+
+# ── Ambientes virtuais ──
+.venv/
+venv/
+env/
+
+# ── Build / empacotamento ──
+dist/
+build/
+*.spec
+
+# ── Logs ──
+*.log
+logs/
+
+# ── Datasets (manter apenas amostras) ──
+datasets/downloads/
+!datasets/*_sample.csv
+
+# ── Modelo ML treinado (gerado localmente) ──
+models/trained_model.joblib
+models/*.joblib
+models/feature_names.txt
+
+# ── Dados persistentes locais ──
+data/*.json
+!data/scenarios.json
+
+# ── IDEs ──
+.idea/
+.vscode/
+
+# ── Cache e temporários ──
+.pytest_cache/
+.coverage
+htmlcov/
+*.bak
+*.tmp
+*.swp
